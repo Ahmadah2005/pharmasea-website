@@ -3,23 +3,32 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    margin: 0px; /* add a margin of 20 pixels to the body element */
-    padding: 0px; /* add a padding of 20 pixels to the body element */
-    box-sizing: border-box; /* use the border-box box model */
-    scroll-behavior: smooth; /* add smooth scrolling */
-  }
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    box-sizing: border-box; /* Use the border-box box model */
+    scroll-behavior: smooth; /* Add smooth scrolling */
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    background-image: url('your-image-url.jpg'); /* Add your background image */
+    background-size: cover; /* Ensure the image covers the entire area */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center; /* Center the image */
+    min-height: 100vh; /* Allow the body to grow with content */
+}
 /* You can also set the font family for specific elements */
 header {
-  background-color: #f0f0f0;
-  width: 96%;
-  position: fixed;
-  z-index: 999;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 30px;
-  border-bottom: 1px solid #e0e0e0;
-}
+        background-color: #f0f0f0;
+        width: 100%;
+        position: fixed;
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        padding: 10px 0;
+        border-bottom: 2px solid #e0e0e0; 
+       justify-content: space-between;
+       position: relative;
+       max-width: 100%
+       
+      }
 
 .logo {
   text-decoration: none;
@@ -28,13 +37,14 @@ header {
   font-weight: 700;
   font-size: 1.8em;
 }
-
+/* header team*/
 .navigation a{
     color: #3a6cf4;
-    text-decoration: none;
+   text-decoration: none;
   font-size: 1.1em;
   font-weight: 500;
   padding-left: 30px;
+ 
  
 }
 
@@ -52,10 +62,10 @@ section{
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    min-height: 100vh;
-    
-    
+    min-height: 100vh; 
+    background-attachment: scroll; /* Default behavior */
 }
+
 .main h2 {
     color: #fdf6f6;
     font-size: 1.4em;
@@ -68,7 +78,6 @@ section{
     color: #4e9eff;
    font-size: 3em;
     font-weight: 600;
-
 }
 .main h3 {
     color: #fff;
@@ -77,7 +86,7 @@ section{
     letter-spacing: 1px;
     margin-top:10px;
     margin-bottom: 30px;
-
+   
 }
 .main-btn{
     color: #fff;
@@ -114,11 +123,12 @@ section{
     flex-direction: row;
     flex-wrap: wrap;
 }
+
 .card{
     background-color: #fff;
     width: 21.25em;
     box-shadow: 0 5px 25px rgba(1 1 1/15%);
-    border-radius: 5px;
+    border-radius: 10px;
     padding:25px;
     margin: 15px;
     transition: 0.7s ease; 
@@ -156,7 +166,8 @@ section{
     transition: 0.7s ease;
     background-size: cover; /* add this line */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;}
+    background-color: #ffffff;
+ }
 
 .Team-card:hover {
     transform: scale(1.1);
@@ -206,7 +217,7 @@ section{
     padding: 2em;
     display:flex;
     justify-content: space-between;
-   
+  
 }
 .footer-title {
      font-size: 1.3em;
@@ -220,55 +231,82 @@ section{
     padding:0 12px 0 0 ;
 }
 
-@media (max-width:1023px){
-    header{
+/* Media Queries */
+@media (max-width: 1023px) {
+    header {
         padding: 12px 20px;
     }
 
-    .navigation a{
+    .navigation a {
         padding-left: 10px;
     }
 
-    .title{
+    .title {
         font-size: 1.8em;
     }
 
-    section{
-        padding: 80px 20px;
+    section {
+        padding: 60px 15px; /* Adjust padding for smaller screens */
     }
 
-    .main-content h2{
-        font-size: 1em;
+    .main-content h2 {
+        font-size: 1.2em; /* Adjust h2 size */
     }
 
-    .main-content h3{
-        font-size: 1.6em;
+    .main-content h3 {
+        font-size: 1.6em; /* Adjust h3 size */
     }
 
-    .content{
-        flex-direction: column;
-        align-items: center;
-    }
-
-}
-
-@media (max-width:641px){
-    body{
-        font-size: 12px;
-    }
-
-    .main-content h2{
-        font-size: 0.8em;
-    }
-
-    .main-content h3{
-        font-size: 1.4em;
+    .content {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
     }
 }
 
-@media (max-width:300px){
-    body{
-        font-size: 10px;
-     
+@media (max-width: 641px) {
+    body {
+        font-size: 14px; /* Adjust base font size */
+    }
+
+    .main-content h2 {
+        font-size: 1em; /* Further adjust h2 size */
+    }
+
+    .main-content h3 {
+        font-size: 1.4em; /* Further adjust h3 size */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 12px; /* Smaller font size for very small screens */
+    }
+
+    .main-content h2 {
+        font-size: 0.9em; /* Adjust h2 size */
+    }
+
+    .main-content h3 {
+        font-size: 1.2em; /* Adjust h3 size */
+    }
+}
+
+@media (max-width: 374px) and (max-height: 812px) {
+    body {
+        background-size: 100% 100%; /* Adjust background size for Galaxy Z Fold 5 */
+    }
+}
+
+/* Additional styles for specific devices */
+@media (max-width: 768px) {
+    header {
+        padding: 5px 10px; /* Adjust padding for smaller screens */
+        flex-direction: column; /* Stack items vertically if needed */
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        background-size: contain; /* Adjust for smaller screens */
     }
 }
